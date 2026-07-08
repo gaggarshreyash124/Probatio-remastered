@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovementStates : MonoBehaviour
 {
+#region Movement variables
+
     public CharacterController controller;
     public CinemachineCamera cam;
     public Animator anim;
@@ -30,7 +32,7 @@ public class PlayerMovementStates : MonoBehaviour
     private float airTime;
     public float airactioninterval = 0.6f;
     
-    private bool isSprinting;
+    public bool isSprinting;
     private bool isWalking;
     private bool isIdle;
     
@@ -104,6 +106,17 @@ public class PlayerMovementStates : MonoBehaviour
         return GroundedStates.Idle;
     }
     
+#endregion
+
+#region CombatVariables
+
+    public float BaseSwordDamage;
+    public float Attackintervals;
+    
+    public float cooldownTime = 2f;
+
+#endregion    
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -136,7 +149,7 @@ public class PlayerMovementStates : MonoBehaviour
         
         anim.SetBool("Grounded", wasGrounded);
         
-        HandleInputs();
+        AbilityCallInputs();
         HandleSuperTransition();
         HandleSuperStates();
 
@@ -147,10 +160,6 @@ public class PlayerMovementStates : MonoBehaviour
         velocity.y = Mathf.Clamp(velocity.y, -TerminalVelocity(), Mathf.Infinity);
 
         controller.Move(Vector3.up * velocity.y * Time.deltaTime);
-        
-        
-        Debug.Log(CurrentGroundedStates);
-        Debug.Log(currentAbilityStates);
 
         if (!wasGrounded && !inAir)
         {
@@ -165,19 +174,6 @@ public class PlayerMovementStates : MonoBehaviour
         }
     }
 
-    void HandleInputs()
-    {
-        if (PlayerInputHandler.Instance.DodgeInput && CanDodge)
-        {
-            anim.applyRootMotion = true;
-            currentAbilityStates = AbilityStates.Dodge;
-        }
-        else if (PlayerInputHandler.Instance.JumpInput && CanLeap)
-        {
-            anim.applyRootMotion = true;
-            currentAbilityStates = AbilityStates.Leap;
-        }
-    }
     
 #region Super States    
 
@@ -404,6 +400,20 @@ public class PlayerMovementStates : MonoBehaviour
 
 #region Ability States
 
+    void AbilityCallInputs()
+        {
+            if (PlayerInputHandler.Instance.DodgeInput && CanDodge)
+            {
+                anim.applyRootMotion = true;
+                currentAbilityStates = AbilityStates.Dodge;
+            }
+            else if (PlayerInputHandler.Instance.JumpInput && CanLeap)
+            {
+                anim.applyRootMotion = true;
+                currentAbilityStates = AbilityStates.Leap;
+            }
+        }
+    
     void HandleAbilityState()
     {
         switch (currentAbilityStates)
@@ -470,5 +480,21 @@ public class PlayerMovementStates : MonoBehaviour
         
     }
     
+#endregion
+
+#region Combat
+
+    public void AttackCallInputs()
+    {
+        if (PlayerInputHandler.Instance.AttackInput)
+        {
+            
+        }
+    }
+    public void ComboHit()
+    {
+    
+    }
+
 #endregion
 }

@@ -10,6 +10,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DodgeInput;
     public bool grapple;
 
+    public bool AttackInput;
+
     void Awake()
     {
         if (Instance == null)
@@ -49,5 +51,8 @@ public class PlayerInputHandler : MonoBehaviour
         
         Inputs.Player.Grapple.performed += ctx => grapple = true;
         Inputs.Player.Grapple.canceled += ctx => grapple = false;
+        
+        Inputs.Player.Attack.performed += ctx => AttackInput = true;
+        Inputs.Player.Attack.canceled += ctx => AttackInput = false;
     }
 }
