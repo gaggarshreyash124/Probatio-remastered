@@ -3,30 +3,23 @@ using UnityEngine.AI;
 
 public class Enemy_checks : MonoBehaviour
 {
-    protected Transform player;
+   protected Transform player;
+   protected PlayerMovementState state_check;
+   [SerializeField] protected Enemy_data data;
    [SerializeField] protected NavMeshAgent agent;
-   [SerializeField] protected float walk_range;
-   [SerializeField] protected float sprint_range;
-   [SerializeField] protected float fov_range;
-   [SerializeField] protected float max_range;
-   [SerializeField] protected float min_range;
-   [SerializeField] protected float walk_time;
-   [SerializeField] protected float sprint_time;
-   [SerializeField] protected LayerMask player_mask;
-   protected ScriptableObject PlayerStats;
-   protected float current_time = 0;
+   float current_time = 0;
    protected bool in_range()
    {
-      Collider[] present = Physics.OverlapSphere(transform.position, fov_range, player_mask);
+      Collider[] present = Physics.OverlapSphere(transform.position, data.CheckRange, data.player_mask);
       if (present.Length != 0)
       {
          player = present[0].transform;
-         PlayerStats = player.gameObject.GetComponent<ScriptableObject>();
-         if (Vector3.Distance(transform.position, player.transform.position) < min_range)
+         state_check = player.gameObject.GetComponent<PlayerMovementState>();
+         if (Vector3.Distance(transform.position, player.transform.position) < data.minRange)
          {
             return walk_check();
          }
-         if (Vector3.Distance(transform.position, player.transform.position) < max_range)
+         if (Vector3.Distance(transform.position, player.transform.position) < data.maxRange)
          {
             return (fov_check() || sprint_check());
          }
@@ -37,10 +30,11 @@ public class Enemy_checks : MonoBehaviour
    protected bool fov_check()
    {
       float direction = Vector3.Angle(transform.forward, player.transform.position - transform.position);
-      if (direction < fov_range)
-      { 
-         if (!(Physics.Raycast(transform.position, player.transform.position, sprint_range, player_mask)) && !(agent.hasPath))
+      if (direction < data.AngleCheck)
+      {
+         if (!(Physics.Raycast(transform.position, player.transform.position, data.maxRange, data.player_mask)) && !(agent.hasPath))
          {
+            Debug.Log("Wall Check");
             return behind_wall_check();
          }
          return true;
@@ -50,7 +44,7 @@ public class Enemy_checks : MonoBehaviour
 
    protected bool sprint_check()
    {
-      if ((Vector3.Distance(transform.position, player.transform.position) <= sprint_range) && PlayerStats)
+      if ((Vector3.Distance(transform.position, player.transform.position) <= data.runRange))
       {
          return true;
       }
@@ -59,7 +53,7 @@ public class Enemy_checks : MonoBehaviour
 
    protected bool walk_check()
    {
-      if (Vector3.Distance(transform.position, player.transform.position) <= walk_range)
+      if (Vector3.Distance(transform.position, player.transform.position) <= data.walkRange)
       {
          return true;
       }
@@ -69,16 +63,16 @@ public class Enemy_checks : MonoBehaviour
    protected bool behind_wall_check()
    {
       current_time += Time.deltaTime;
-      if (true)
+      if (state_check.isSprinting)
       {
-         if (current_time > sprint_time)
+         if (current_time > data.runTime)
          {
             current_time = 0;
             return true;
          }
          return false;
       }
-      if (current_time > walk_time)
+      if (current_time > data.walkTime)
       { current_time = 0;
             return true;
       }
