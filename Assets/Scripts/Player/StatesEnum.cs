@@ -1,6 +1,6 @@
 public enum States
 {
-    None,
+    Combat,
     Grounded,
     InAir,
     Abilities

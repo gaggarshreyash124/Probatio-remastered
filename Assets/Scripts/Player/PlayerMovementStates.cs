@@ -11,8 +11,6 @@ public class PlayerMovementStates : MonoBehaviour
     public Animator anim;
     
     Vector3 velocity;
-
-    public float counter = Mathf.Infinity;
     
     public float Gravity = -9.81f;
     public float airresistance;
@@ -107,16 +105,6 @@ public class PlayerMovementStates : MonoBehaviour
     }
     
 #endregion
-
-#region CombatVariables
-
-    public float BaseSwordDamage;
-    public float Attackintervals;
-    
-    public float cooldownTime = 2f;
-
-#endregion    
-
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -173,7 +161,6 @@ public class PlayerMovementStates : MonoBehaviour
             }
         }
     }
-
     
 #region Super States    
 
@@ -194,6 +181,10 @@ public class PlayerMovementStates : MonoBehaviour
             case States.InAir:
                 Debug.Log("Inair State");
                 break;
+            
+            case States.Combat:
+                AttackCallInputs();
+                break;
         }
     }
 
@@ -206,6 +197,10 @@ public class PlayerMovementStates : MonoBehaviour
         else if (!isGrounded && canEnterAirState)
         {
             CurrentSuperStates = States.InAir;
+        }
+        else if (PlayerInputHandler.Instance.AttackInput || inCombat)
+        {
+            CurrentSuperStates = States.Combat;
         }
         else
         {
@@ -484,16 +479,79 @@ public class PlayerMovementStates : MonoBehaviour
 
 #region Combat
 
+    public float attackConectionTime = 1f;
+    public float counter = 0;
+    public float hitcount = 0;
+    public bool attackFinished = true;
+    bool isattacking = false;
+    private bool animcalled;
+    private bool inCombat;
+    
     public void AttackCallInputs()
     {
-        if (PlayerInputHandler.Instance.AttackInput)
+        if (attackFinished)
+            counter -= Time.deltaTime;
+
+        if (isattacking && !animcalled)
         {
-            
+            isattacking = false;
+            animcalled = true;
+            anim.SetTrigger("Attacking");
+        }
+        else if (!isattacking && animcalled)
+        {
+            animcalled = false;
+        }
+        
+        if (PlayerInputHandler.Instance.AttackInput && attackFinished && hitcount == 0)
+        {
+            anim.applyRootMotion = true;
+            inCombat = true;
+            isattacking = true;
+            attackFinished = false;
+            PlayerInputHandler.Instance.AttackOver();
+            anim.SetTrigger("Attack");
+            counter = attackConectionTime;
+            hitcount++;
+        }
+        else if (PlayerInputHandler.Instance.AttackInput && counter > 0 && hitcount == 1 && attackFinished)
+        {
+            isattacking = true;
+            attackFinished = false;
+            PlayerInputHandler.Instance.AttackOver();
+            anim.SetTrigger("Attack 2");
+            hitcount++;
+        }
+        else if (PlayerInputHandler.Instance.AttackInput && counter > 0 && hitcount == 2 && attackFinished)
+        {
+            isattacking = true;
+            attackFinished = false;
+            PlayerInputHandler.Instance.AttackOver();
+            anim.SetTrigger("Attack 3");
+            hitcount++;
+        }
+        else if (PlayerInputHandler.Instance.AttackInput && counter > 0 && hitcount == 3 && attackFinished)
+        {
+            isattacking = true;
+            attackFinished = false;
+            PlayerInputHandler.Instance.AttackOver();
+            anim.SetTrigger("Attack 4");
+            hitcount = 0;
+        }
+        else if (counter <= 0 )
+        {
+            anim.applyRootMotion = false;
+            PlayerInputHandler.Instance.AttackOver();
+            hitcount = 0;
+            isattacking =  false;
+            inCombat = false;
         }
     }
-    public void ComboHit()
+
+    public void AttackFinished()
     {
-    
+        attackFinished = true;
+        counter = attackConectionTime;
     }
 
 #endregion

@@ -53,6 +53,7 @@ public class PlayerInputHandler : MonoBehaviour
         Inputs.Player.Grapple.canceled += ctx => grapple = false;
         
         Inputs.Player.Attack.performed += ctx => AttackInput = true;
-        Inputs.Player.Attack.canceled += ctx => AttackInput = false;
     }
+
+    public void AttackOver() => AttackInput = false;
 }
