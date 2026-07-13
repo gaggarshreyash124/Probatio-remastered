@@ -110,16 +110,17 @@ public class PlayerMovementStates : MonoBehaviour
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
     }
-
     private void Start()
     {
+        Sword = true;
         ChangeGroundedStates(GroundedStates.Transition);
         CurrentSuperStates = States.Grounded;
         currentAbilityStates = AbilityStates.None;
     }
-
     private void Update()
     {
+        anim.SetBool("Sword",Sword);
+        
         isGrounded = controller.isGrounded;
 
         if (wasGrounded && !isGrounded)
@@ -486,6 +487,7 @@ public class PlayerMovementStates : MonoBehaviour
     bool isattacking = false;
     private bool animcalled;
     private bool inCombat;
+    public bool Sword = true;
     
     public void AttackCallInputs()
     {
