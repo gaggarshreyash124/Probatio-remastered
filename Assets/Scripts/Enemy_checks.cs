@@ -34,7 +34,6 @@ public class Enemy_checks : MonoBehaviour
       {
          if (!(Physics.Raycast(transform.position, player.transform.position, data.maxRange, data.player_mask)) && !(agent.hasPath))
          {
-            Debug.Log("Wall Check");
             return behind_wall_check();
          }
          return true;
@@ -73,8 +72,9 @@ public class Enemy_checks : MonoBehaviour
          return false;
       }
       if (current_time > data.walkTime)
-      { current_time = 0;
-            return true;
+      {
+         current_time = 0;
+         return true;
       }
       return false;
    }

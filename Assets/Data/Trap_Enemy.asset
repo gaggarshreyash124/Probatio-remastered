@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11bdbab639e70346889998c97b05b10, type: 3}
+  m_Name: Trap_Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy_data
+  TrapEnemy: 1
+  maxHealth: 50
+  walkSpeed: 15
+  runSpeed: 15
+  GravSpeed: 5
+  walkRange: 40
+  runRange: 40
+  maxRange: 40
+  minRange: 40
+  CheckRange: 50
+  AngleCheck: 60
+  walkTime: 1.5
+  runTime: 0.5
+  player_mask:
+    serializedVersion: 2
+    m_Bits: 128

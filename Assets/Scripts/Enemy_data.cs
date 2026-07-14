@@ -3,13 +3,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enemy_data", menuName = "Scriptable Objects/Enemy_data")]
 public class Enemy_data : ScriptableObject
 {
-    [Header("Enemy Type")] public bool LungeEnemy = false;
+    [Header("Enemy Type")] public bool TrapEnemy = false;
     
     [Header("Max Health")] public float maxHealth = 100f;
     
     [Header("Movement")]
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
+    public float GravSpeed = 5f;
     
     [Header("Detection Ranges")]
     public float walkRange = 10f;

@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using UnityEditor.Build.Pipeline.Tasks;
 
 public class Base_enemy : Enemy_checks
 {
@@ -23,7 +22,6 @@ public class Base_enemy : Enemy_checks
         anim.SetBool("Damage", false);
         if (in_range())
         {
-            anim.SetBool("Walk", true);
             follow_player();
         }
         else if (!(agent.hasPath || agent.pathPending) || (agent.remainingDistance <= agent.stoppingDistance))
@@ -34,8 +32,11 @@ public class Base_enemy : Enemy_checks
 
     void follow_player()
     {
+        
         if (Vector3.Distance(transform.position, player.transform.position) > attack_range)
         {
+            anim.SetBool("Attack", false);
+            anim.SetBool("Walk", true);
             switch (state_check.isSprinting)
             {
                 case true:
@@ -46,7 +47,6 @@ public class Base_enemy : Enemy_checks
                     break;
             }
             agent.destination = player.transform.position;
-            anim.SetBool("Attack", false);
         }
         else
         {
@@ -56,9 +56,9 @@ public class Base_enemy : Enemy_checks
 
     void attack_player()
     {
+        agent.ResetPath();
         anim.SetBool("Walk", false);
         anim.SetBool("Attack", true);
-        agent.SetDestination(player.transform.position + Vector3.forward);
     }
 
     IEnumerator Patrol()
