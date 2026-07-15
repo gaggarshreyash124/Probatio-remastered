@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth playerHealth;
     public bool Dead;
     public int MaxHealth;
     public float CurrentHealth;
+
+    private void Awake()
+    {
+        playerHealth = this;
+    }
 
     private void Start()
     {

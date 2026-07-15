@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovementStates : MonoBehaviour
 {
+
+    public static PlayerMovementStates Player;
+    
 #region Movement variables
 
     public CharacterController controller;
@@ -105,10 +108,16 @@ public class PlayerMovementStates : MonoBehaviour
     }
     
 #endregion
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
+        Player = this;
+        if (Player != null)
+        {
+            //Destroy(Player);
+        }
     }
     private void Start()
     {
@@ -557,4 +566,5 @@ public class PlayerMovementStates : MonoBehaviour
     }
 
 #endregion
+
 }
