@@ -11,4 +11,20 @@ public class BossAttack : BossPlayerDetection
     {
         
     }
+
+    public void SmashAttack()
+    {
+        
+    }
+
+    public void JumpAttack()
+    {
+        
+    }
+
+    public void SweepAttack()
+    {
+        
+    }
+    
 }

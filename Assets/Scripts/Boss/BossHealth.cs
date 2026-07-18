@@ -14,7 +14,16 @@ public class BossHealth : MonoBehaviour
     public float CurrentPosture;
     [Space]
     public float Defence;
-
+    
+    bool PostureDamagetick = false;
+    private bool posturelowered;
+    float counter = 0;
+    
+    [Tooltip("amount of time before PostureDamage resets")]
+    public float PostureResetCooldown = 5f;
+    [Tooltip("amount of time before Super armour resets")]
+    public float superArmourResetCooldown;
+    
     private void Awake()
     {
         bossController = GetComponent<BossAttack>();
@@ -25,6 +34,36 @@ public class BossHealth : MonoBehaviour
         CurrentHealth = MaxHealth;
         MaxSuperarmour = MaxHealth;
         CurrentSuperarmour = MaxSuperarmour;
+        CurrentPosture = MaxPosture;
+    }
+
+    private void Update()
+    {
+        if (PlayerInputHandler.Instance.grapple)
+        {
+            PostureDamage(10);
+            PlayerInputHandler.Instance.grapple = false;
+        }
+        if (!posturelowered && PostureDamagetick)
+        {
+            posturelowered = true;
+            PostureDamagetick = false;
+            counter = 0;
+        }
+        else if (posturelowered && PostureDamagetick)
+        {
+            PostureDamagetick = false;
+            counter = 0;
+        }
+        
+        if (posturelowered)
+        {
+            counter += Time.deltaTime;
+            if (counter > PostureResetCooldown)
+            {
+                PostureReset();
+            }
+        }
     }
 
     float CalculateDamage(float Damage)
@@ -32,12 +71,12 @@ public class BossHealth : MonoBehaviour
         return Damage * (100/( 100 + Defence));
     }
     
-    public void TakeDamage(float damage,float posture,float weapon)
+    public void TakeDamage(float Damage,float PostureDamagePercent)
     {
-        CurrentHealth -= CalculateDamage(damage);
-        CurrentSuperarmour -=damage;
+        CurrentHealth -= CalculateDamage(Damage);
+        CurrentSuperarmour -=Damage;
         
-        PostureDamage(damage, weapon);
+        PostureDamage(PostureDamagePercent);
         
         if (CurrentHealth <= 0)
         {
@@ -46,16 +85,22 @@ public class BossHealth : MonoBehaviour
         }
     }
 
-    public void PostureDamage(float damage,float weapon)
+    public void PostureDamage(float PostureDamagePercent)
     {
-        if (weapon == 1)
+        PostureDamagetick = true;
+        CurrentPosture -= (MaxPosture * PostureDamagePercent/100);
+        if (CurrentPosture <= 0)
         {
-            CurrentPosture -= (MaxPosture * damage);
+            Debug.Log("Damn Boss is down time to repost");
         }
-        else if (weapon == 2)
-        {
-            CurrentPosture -= (MaxPosture * damage);
-        }
+        Debug.Log(CurrentPosture);
+        Debug.Log(PostureDamagePercent/100);
+    }
+
+    public void PostureReset()
+    {
+        posturelowered = false;
+        CurrentPosture = MaxPosture;
     }
     
     public  void Heal(float healAmount)

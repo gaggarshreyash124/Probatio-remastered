@@ -161,9 +161,7 @@ public class PlayerMovementStates : MonoBehaviour
 
         if (!wasGrounded && !inAir)
         {
-            Debug.Log("StartAirCount");
             airTime -= Time.deltaTime;
-            Debug.Log(airTime);
             if (airTime <= 0)
             {
                 inAir = true;

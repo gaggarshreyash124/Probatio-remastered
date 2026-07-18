@@ -50,7 +50,6 @@ public class PlayerInputHandler : MonoBehaviour
         Inputs.Player.Dodge.canceled += ctx => DodgeInput = false;
         
         Inputs.Player.Grapple.performed += ctx => grapple = true;
-        Inputs.Player.Grapple.canceled += ctx => grapple = false;
         
         Inputs.Player.Attack.performed += ctx => AttackInput = true;
     }

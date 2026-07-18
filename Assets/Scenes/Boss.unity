@@ -5301,7 +5301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
   m_SerializedVersion: 0
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -5316,7 +5316,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.59
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: d96d4257a8d2aa94bb091c9004f6b5f7, type: 2}
   m_BuildHeightMesh: 0
@@ -6102,6 +6102,8 @@ MonoBehaviour:
   CurrentSuperarmour: 0
   CurrentPosture: 0
   Defence: 100
+  PostureResetCooldown: 5
+  superArmourResetCooldown: 0
 --- !u!1 &1690691945
 GameObject:
   m_ObjectHideFlags: 0
