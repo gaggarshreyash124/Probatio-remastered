@@ -6097,7 +6097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
   MaxHealth: 2000
   MaxSuperarmour: 2000
-  MaxPosture: 0
+  MaxPosture: 500
   CurrentHealth: 55.300003
   CurrentSuperarmour: 0
   CurrentPosture: 0

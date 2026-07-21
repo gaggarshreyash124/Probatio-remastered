@@ -4,9 +4,7 @@ using UnityEngine.AI;
 
 public class BossPlayerDetection: MonoBehaviour
 {
-    public bool StartFight;
-    
-    Vector3 PlayerPosition;
+    protected Vector3 PlayerPosition;
     
     public NavMeshAgent agent;
 
@@ -14,32 +12,32 @@ public class BossPlayerDetection: MonoBehaviour
     public float mediumrange;
     public float bigrange;
     
-    bool inSmallRange()
+    protected bool inSmallRange()
     {
         return Vector3.Distance(PlayerPosition, transform.position) <= smallrange;
     }
 
-    bool MidRange()
+    protected bool inMidRange()
     {
         return Vector3.Distance(PlayerPosition, transform.position) <= mediumrange;
     }
 
-    bool BigRange()
+    protected bool inBigRange()
     {
         return Vector3.Distance(PlayerPosition, transform.position) <= bigrange;
     }
     
-    private void Start()
+    public void Start()
     {
         PlayerPosition = PlayerMovementStates.Player.transform.position;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         PlayerPosition = PlayerMovementStates.Player.transform.position;
     }
 
-    private void OnDrawGizmos()
+    public void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, smallrange);

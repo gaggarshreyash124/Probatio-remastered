@@ -6,18 +6,23 @@ public class BossHealth : MonoBehaviour
 {
     private BossAttack bossController;
     public int MaxHealth;
-    public int MaxSuperarmour;
+    public int MaxSuperArmour;
     public int MaxPosture;
     [Space]
     public float CurrentHealth;
-    public float CurrentSuperarmour;
+    public float CurrentSuperArmour;
     public float CurrentPosture;
     [Space]
     public float Defence;
     
-    bool PostureDamagetick = false;
+    float Posturecounter = 0;
+    private float SuperCounter = 0;
+    
+    private bool PostureDamagetick = false;
     private bool posturelowered;
-    float counter = 0;
+    
+    private bool SuperArmourDamagetick = false;
+    private bool SuperArmourlowered;
     
     [Tooltip("amount of time before PostureDamage resets")]
     public float PostureResetCooldown = 5f;
@@ -32,8 +37,8 @@ public class BossHealth : MonoBehaviour
     private void Start()
     {
         CurrentHealth = MaxHealth;
-        MaxSuperarmour = MaxHealth;
-        CurrentSuperarmour = MaxSuperarmour;
+        MaxSuperArmour = MaxHealth;
+        CurrentSuperArmour = MaxSuperArmour;
         CurrentPosture = MaxPosture;
     }
 
@@ -44,26 +49,9 @@ public class BossHealth : MonoBehaviour
             PostureDamage(10);
             PlayerInputHandler.Instance.grapple = false;
         }
-        if (!posturelowered && PostureDamagetick)
-        {
-            posturelowered = true;
-            PostureDamagetick = false;
-            counter = 0;
-        }
-        else if (posturelowered && PostureDamagetick)
-        {
-            PostureDamagetick = false;
-            counter = 0;
-        }
-        
-        if (posturelowered)
-        {
-            counter += Time.deltaTime;
-            if (counter > PostureResetCooldown)
-            {
-                PostureReset();
-            }
-        }
+
+        PostureReset();
+        SuperArmourReset();
     }
 
     float CalculateDamage(float Damage)
@@ -73,8 +61,10 @@ public class BossHealth : MonoBehaviour
     
     public void TakeDamage(float Damage,float PostureDamagePercent)
     {
+        SuperArmourDamagetick = true;
+            
         CurrentHealth -= CalculateDamage(Damage);
-        CurrentSuperarmour -=Damage;
+        CurrentSuperArmour -=Damage;
         
         PostureDamage(PostureDamagePercent);
         
@@ -88,19 +78,64 @@ public class BossHealth : MonoBehaviour
     public void PostureDamage(float PostureDamagePercent)
     {
         PostureDamagetick = true;
+        
         CurrentPosture -= (MaxPosture * PostureDamagePercent/100);
         if (CurrentPosture <= 0)
         {
             Debug.Log("Damn Boss is down time to repost");
         }
         Debug.Log(CurrentPosture);
-        Debug.Log(PostureDamagePercent/100);
+        Debug.Log(MaxPosture * PostureDamagePercent/100);
     }
 
     public void PostureReset()
     {
-        posturelowered = false;
-        CurrentPosture = MaxPosture;
+        if (!posturelowered && PostureDamagetick)
+        {
+            posturelowered = true;
+            PostureDamagetick = false;
+            Posturecounter = 0;
+        }
+        else if (posturelowered && PostureDamagetick)
+        {
+            PostureDamagetick = false;
+            Posturecounter = 0;
+        }
+        
+        if (posturelowered)
+        {
+            Posturecounter += Time.deltaTime;
+            if (Posturecounter > PostureResetCooldown)
+            {
+                posturelowered = false;
+                CurrentPosture = MaxPosture;
+            }
+        }
+    }
+
+    public void SuperArmourReset()
+    {
+        if (!SuperArmourlowered && SuperArmourDamagetick)
+        {
+            SuperArmourlowered = true;
+            SuperArmourDamagetick = false;
+            SuperCounter = 0;
+        }
+        else if (SuperArmourlowered && SuperArmourDamagetick)
+        {
+            SuperArmourDamagetick = false;
+            SuperCounter = 0;
+        }
+        
+        if (SuperArmourlowered)
+        {
+            SuperCounter += Time.deltaTime;
+            if (SuperCounter > superArmourResetCooldown)
+            {
+                SuperArmourlowered = false;
+                CurrentSuperArmour = MaxSuperArmour;
+            }
+        }
     }
     
     public  void Heal(float healAmount)

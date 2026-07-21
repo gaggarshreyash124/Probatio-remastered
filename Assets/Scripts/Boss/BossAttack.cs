@@ -6,7 +6,19 @@ public class BossAttack : BossPlayerDetection
     public bool isAttacking;
     public bool Frenzy = false;
 
-    
+    public override void Update()
+    {
+        base.Update();
+        if (inSmallRange())
+        {
+            basicPunch();
+        }
+        else if (inMidRange())
+        {
+            SmashAttack();
+        }
+    }
+
     public void basicPunch()
     {
         
