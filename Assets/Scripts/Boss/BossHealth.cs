@@ -47,7 +47,14 @@ public class BossHealth : MonoBehaviour
         if (PlayerInputHandler.Instance.grapple)
         {
             PostureDamage(10);
+            
             PlayerInputHandler.Instance.grapple = false;
+        }
+
+        if (PlayerInputHandler.Instance.CrounchInput)
+        {
+            TakeDamage(15,5);
+            PlayerInputHandler.Instance.CrounchInput = false;
         }
 
         PostureReset();
@@ -65,7 +72,8 @@ public class BossHealth : MonoBehaviour
             
         CurrentHealth -= CalculateDamage(Damage);
         CurrentSuperArmour -=Damage;
-        
+        Debug.Log("Health" +  CurrentHealth);
+        Debug.Log("Posture" + CurrentPosture);
         PostureDamage(PostureDamagePercent);
         
         if (CurrentHealth <= 0)
@@ -84,8 +92,8 @@ public class BossHealth : MonoBehaviour
         {
             Debug.Log("Damn Boss is down time to repost");
         }
-        Debug.Log(CurrentPosture);
-        Debug.Log(MaxPosture * PostureDamagePercent/100);
+        Debug.Log("Posture " +CurrentPosture);
+        //Debug.Log(MaxPosture * PostureDamagePercent/100);
     }
 
     public void PostureReset()

@@ -9,7 +9,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool JumpInput;
     public bool DodgeInput;
     public bool grapple;
-
+    public bool CrounchInput;
+    
     public bool AttackInput;
 
     void Awake()
@@ -45,6 +46,8 @@ public class PlayerInputHandler : MonoBehaviour
 
         Inputs.Player.Jump.performed += ctx => JumpInput = true;
         Inputs.Player.Jump.canceled += ctx => JumpInput = false;
+        
+        Inputs.Player.Crouch.performed += ctx => CrounchInput = true;
         
         Inputs.Player.Dodge.performed += ctx => DodgeInput = true;
         Inputs.Player.Dodge.canceled += ctx => DodgeInput = false;
