@@ -6,17 +6,27 @@ public class BossAttack : BossPlayerDetection
     public bool isAttacking;
     public bool Frenzy = false;
 
+    private bool canattackpunch;
+    private bool canattacksmash;
+    private bool canattackjump;
+    private bool canattacksweep;
+        
     public override void Update()
     {
         base.Update();
-        if (inSmallRange())
+
+        switch (BossPlayerRange)
         {
-            basicPunch();
+            case Range.small:
+                break;
+            case Range.medium:
+                break;
+            case Range.big:
+                break;
         }
-        else if (inMidRange())
-        {
-            SmashAttack();
-        }
+        
+        
+        
     }
 
     public void basicPunch()

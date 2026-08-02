@@ -8,10 +8,11 @@ public class BossPlayerDetection: MonoBehaviour
     
     public NavMeshAgent agent;
 
-    public float smallrange;
-    public float mediumrange;
-    public float bigrange;
-    
+    [SerializeField]protected float smallrange;
+    [SerializeField]protected float mediumrange;
+    [SerializeField]protected float bigrange;
+
+    protected Range BossPlayerRange;
     protected bool inSmallRange()
     {
         return Vector3.Distance(PlayerPosition, transform.position) <= smallrange;
@@ -35,6 +36,19 @@ public class BossPlayerDetection: MonoBehaviour
     public virtual void Update()
     {
         PlayerPosition = PlayerMovementStates.Player.transform.position;
+        
+        if (inBigRange())
+        {
+            BossPlayerRange = Range.big;
+        }
+        else if (inMidRange())
+        {
+            BossPlayerRange = Range.medium;
+        }
+        else if (inSmallRange())
+        {
+            BossPlayerRange = Range.small;
+        }
     }
 
     public void OnDrawGizmos()
@@ -46,4 +60,11 @@ public class BossPlayerDetection: MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, bigrange);
     }
+}
+
+public enum Range
+{
+    small,
+    medium,
+    big
 }
