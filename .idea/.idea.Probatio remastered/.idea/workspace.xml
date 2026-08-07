@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bb5f8353-9420-481c-9281-124a207ae256" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="4" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boss/BossHealth.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="5.3620237634713453E-17" />
+      <entry key="MS500" value="5.579407221350817E-4" />
+      <entry key="S2" value="0.26702595534886386" />
+      <entry key="S5" value="2.254036054213618" />
+      <entry key="S10" value="5.29982903696495" />
+      <entry key="S30" value="10.097708043236706" />
+      <entry key="S60" value="13.467588802059225" />
+      <entry key="M2" value="17.59071453738871" />
+      <entry key="M5" value="22.233818894470822" />
+      <entry key="M10" value="24.777633819249132" />
+      <entry key="M15" value="28.201244701627612" />
+      <entry key="M30" value="54.75192722145138" />
+      <entry key="H1" value="125.26313506706991" />
+      <entry key="H2" value="215.66771307538608" />
+      <entry key="H4" value="290.2209848687485" />
+      <entry key="D1" value="375.6818544579533" />
+      <entry key="W1" value="393.023459847945" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.000000000006076" />
+      <entry key="MS500" value="1.005711161908659" />
+      <entry key="S2" value="1.2758631594105185" />
+      <entry key="S5" value="1.659059325839364" />
+      <entry key="S10" value="2.050486694863874" />
+      <entry key="S30" value="3.065086289028918" />
+      <entry key="S60" value="3.914917387575006" />
+      <entry key="M2" value="4.694867148389031" />
+      <entry key="M5" value="5.390053541547302" />
+      <entry key="M10" value="5.738293863512343" />
+      <entry key="M15" value="6.284883188312439" />
+      <entry key="M30" value="10.95891215709537" />
+      <entry key="H1" value="23.95429557757521" />
+      <entry key="H2" value="41.075973118591406" />
+      <entry key="H4" value="55.41697175003885" />
+      <entry key="D1" value="72.02838827580507" />
+      <entry key="W1" value="75.41768612906912" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.9746111390046803E-6" />
+      <entry key="MS500" value="0.07344431874088107" />
+      <entry key="S2" value="0.8519397304847184" />
+      <entry key="S5" value="3.3179415734596134" />
+      <entry key="S10" value="6.88267326848744" />
+      <entry key="S30" value="12.875348691426188" />
+      <entry key="S60" value="17.18096637415197" />
+      <entry key="M2" value="22.157030827504343" />
+      <entry key="M5" value="27.562200146916695" />
+      <entry key="M10" value="30.482592530799543" />
+      <entry key="M15" value="34.46177950487071" />
+      <entry key="M30" value="65.69024673835888" />
+      <entry key="H1" value="149.19565744753496" />
+      <entry key="H2" value="256.7253182256595" />
+      <entry key="H4" value="345.6256590705406" />
+      <entry key="D1" value="447.70759466623804" />
+      <entry key="W1" value="468.4407502779053" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3GIShqt0wbCv5xdP3pAVq4M5U8v" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Boss&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="D:\Unity\Editors\6000.3.9f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;D:\Projects\Github\Probatio remastered&quot; -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\Projects\Github\Probatio remastered" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="D:\Unity\Editors\6000.3.9f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Projects\Github\Probatio remastered&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\Projects\Github\Probatio remastered" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to" type="UnityDevicePlayer" factoryName="UnityAttachToDevicePlayer">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb5f8353-9420-481c-9281-124a207ae256" name="Changes" comment="" />
+      <created>1783657713855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783657713855</updated>
+      <workItem from="1783657725952" duration="106000" />
+      <workItem from="1783935955888" duration="902000" />
+      <workItem from="1783951386957" duration="2843000" />
+      <workItem from="1784001488338" duration="2451000" />
+      <workItem from="1784088759325" duration="5852000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

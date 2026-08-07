@@ -1,0 +1,340 @@
+fileFormatVersion: 2
+guid: 1cc18bec22e1b6441836576adc7e8724
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bag
+    second: {fileID: 2100000, guid: a33f8595e42be3446a80c9dc81598d59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barrel
+    second: {fileID: 2100000, guid: 60009ff3dbe5c424b809c48e2d1fbabd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barrel_Rim
+    second: {fileID: 2100000, guid: 0c0c5ae3faf62f242875eac5ddc2205c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Castle_Main
+    second: {fileID: 2100000, guid: f68b5dc41aa274b4ca733c9f59a2f9c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Castle_Main_Arena_Dummy
+    second: {fileID: 2100000, guid: 109731c8c504f1b42a49595843aad511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Castle_Stairs
+    second: {fileID: 2100000, guid: ed82f35f98e4dbe4e964f8fdeda5a847, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_Tex
+    second: {fileID: 2100000, guid: c0a80cb00927efe4ea0479209df86bdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkMetal
+    second: {fileID: 2100000, guid: 160f34e427614f54cae147988e926084, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkWood
+    second: {fileID: 2100000, guid: 5d1c859e4a685cf4a8b6a812e3b69e10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkWood.001
+    second: {fileID: 2100000, guid: 5446fa0084c5de3438ce535a95b84691, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dummy_Castle
+    second: {fileID: 2100000, guid: 2ee7271d7dfb5a84ea47dd19c51c149c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightSteel
+    second: {fileID: 2100000, guid: e8f938938bce95746abdd2db24a96371, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightWood
+    second: {fileID: 2100000, guid: 4daf7e74cb5f651489fa97e402db9cbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: ae26511333ef0a249bf0dcd141115b4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: cad5549556ced664bbc29868a0a35090, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: a544566fb37894644accf1a2665e225e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel
+    second: {fileID: 2100000, guid: f91575f17c5bf1843bfe58925715d8ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 17fefa932d26a5147a3c1722f77411f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pIKE
+    second: {fileID: 2100000, guid: 8a900a8156f93d54cb89cd333b231af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sPIRAL stAIRCASE
+    second: {fileID: 2100000, guid: 1b3ff173760883a4fbaff00633194a2e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_willow_02_nor_gl_2k
+    second: {fileID: 2800000, guid: 605a0b5f8b7c960429c487c5db803545, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_willow_02_rough_2k
+    second: {fileID: 2800000, guid: 1fd5c5ce5b9b4a540a87d82d4ebaa1ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_willow_diff_2k
+    second: {fileID: 2800000, guid: e5a21f2e3e73d2f41a20c9917e6a9633, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_willow_nor_gl_2k
+    second: {fileID: 2800000, guid: 70b907073d9030d49b29bf6d3c8a416a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_willow_rough_2k
+    second: {fileID: 2800000, guid: 6e74910c71548ff4aa936af9e805e931, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: brown_leather_albedo_2k
+    second: {fileID: 2800000, guid: 28e976d04c6b98348adb599621024dfc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: brown_leather_nor_gl_2k
+    second: {fileID: 2800000, guid: 383f55fa00d05914299307082d32e476, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: brown_leather_rough_2k
+    second: {fileID: 2800000, guid: df441a6454a7bc849bfe1b1c25d08661, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: brown_planks_04_nor_gl_2k
+    second: {fileID: 2800000, guid: 595726dd32e8df84b9e957196a4e054f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: brown_planks_04_rough_2k
+    second: {fileID: 2800000, guid: 3f31643032e64ac4597b70c7ad2870bd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: castle_brick_01_nor_gl_2k
+    second: {fileID: 2800000, guid: 2406775e65f0efc4ea6796c80850c0bd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: castle_brick_01_rough_2k
+    second: {fileID: 2800000, guid: aa6d62792683b8c44b4d3a4ace26ddc0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark_wood_diff_2k
+    second: {fileID: 2800000, guid: 8bff80b38980aac40ac120637917e876, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark_wood_nor_gl_2k
+    second: {fileID: 2800000, guid: 1a363b561f4f18a409a5ac529ee523e7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark_wood_rough_2k
+    second: {fileID: 2800000, guid: fd7e0c0f76420a046acc0f298a04361d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_plate_02_diff_2k
+    second: {fileID: 2800000, guid: 6c071b9094b14444a9d45e5ad77bfa60, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_plate_02_metal_2k
+    second: {fileID: 2800000, guid: b718469051c3ed04882a7e3dffd57eab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_plate_02_nor_gl_2k
+    second: {fileID: 2800000, guid: 37ddfb458e6651d4cb32b3e198a19eef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_plate_02_rough_2k
+    second: {fileID: 2800000, guid: 46e3044db1339ab43adfa558c4ca68bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastered_stone_wall_diff_2k
+    second: {fileID: 2800000, guid: fe9acc723ff12c24880f0d4837267ba8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastered_stone_wall_nor_gl_2k
+    second: {fileID: 2800000, guid: 5ea3a6e2b0a9e004a8d6ebaaa70ae6a9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastered_stone_wall_rough_2k
+    second: {fileID: 2800000, guid: fe19e2ad5a886e645bdd64b1e806165c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_04_diff_2k
+    second: {fileID: 2800000, guid: bbeaf4d5759998643833c2eebc733a06, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_04_metal_2k
+    second: {fileID: 2800000, guid: 4704ca27fc71e9249a06ae8664d9cce7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_04_nor_gl_2k
+    second: {fileID: 2800000, guid: 6baa141659d54fe4d83e5a2327e4965c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_04_rough_2k
+    second: {fileID: 2800000, guid: c410a747e5ecef248a5833029582856e, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
