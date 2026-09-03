@@ -1,32 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BossAttack : BossPlayerDetection
+
+public class BossAttack : MonoBehaviour
 {
     PlayerHealth playerHealth;
-    public bool isAttacking;
+    
+    bool iscombofinished = false;
+    
     public bool Frenzy = false;
-
-    private bool canattackpunch;
-    private bool canattacksmash;
-    private bool canattackjump;
-    private bool canattacksweep;
         
-    public override void Update()
+    public void Update()
     {
-        base.Update();
-
-        switch (BossPlayerRange)
-        {
-            case Range.small:
-                break;
-            case Range.medium:
-                break;
-            case Range.big:
-                break;
-        }
-        
-        
-        
     }
 
     public void basicPunch()
@@ -48,5 +33,20 @@ public class BossAttack : BossPlayerDetection
     {
         
     }
-    
+}
+
+[System.Serializable]
+public class Attacks
+{
+    public List<Boss1Attacks> ComboAttacks;
+}
+
+public enum Boss1Attacks
+{
+    basicPunch,
+    Smash,
+    Jump,
+    Sweep,
+    Delay,
+    Grace
 }
