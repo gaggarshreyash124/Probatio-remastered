@@ -121,6 +121,10 @@ public class PlayerMovementStates : MonoBehaviour
     }
     private void Start()
     {
+        if (Cursor.lockState != CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         Sword = true;
         ChangeGroundedStates(GroundedStates.Transition);
         CurrentSuperStates = States.Grounded;
@@ -412,6 +416,7 @@ public class PlayerMovementStates : MonoBehaviour
             }
             else if (PlayerInputHandler.Instance.JumpInput && CanLeap)
             {
+                
                 anim.applyRootMotion = true;
                 currentAbilityStates = AbilityStates.Leap;
             }
@@ -442,7 +447,14 @@ public class PlayerMovementStates : MonoBehaviour
         if (CanDodge)
         {
             CanDodge = false;
-            anim.SetTrigger("Dodge");
+            if (Sword)
+            {
+                anim.Play("Sword Dodge");
+            }
+            else
+            {
+                anim.Play("Dodge");
+            }
         }
     }
     IEnumerator DodgeCooldown(float CooldownTime)
@@ -464,7 +476,10 @@ public class PlayerMovementStates : MonoBehaviour
         {
             AnimationFinished = false;
             CanLeap = false;
-            anim.SetTrigger("Leap");
+            if (Sword)
+            {
+                anim.Play("Sword Leap");
+            }
         }
     }
     IEnumerator LeapCooldown(float CooldownTime)
@@ -477,8 +492,8 @@ public class PlayerMovementStates : MonoBehaviour
     {
         anim.applyRootMotion = false;
         ChangeAbilityStates();
-        StartCoroutine(LeapCooldown(LeapAbilityCooldown));
         AnimationFinished = true;
+        StartCoroutine(LeapCooldown(LeapAbilityCooldown));
         Debug.Log("Leap ended");
         
     }

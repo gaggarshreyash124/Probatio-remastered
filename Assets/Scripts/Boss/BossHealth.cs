@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    private BossAttack bossController;
-    public Animator BossAnimator;
-    
-    
     public int MaxHealth;
     public int MaxSuperArmour;
     public int MaxPosture;
@@ -22,20 +18,20 @@ public class BossHealth : MonoBehaviour
     
     private bool PostureDamagetick = false;
     private bool posturelowered;
+    [Tooltip("amount of time before PostureDamage resets")]
+    public float PostureResetCooldown = 5f;
     
     private bool SuperArmourDamagetick = false;
     private bool SuperArmourlowered;
-    public float JuampAttackDistanceMultiplier;
-    [Tooltip("amount of time before PostureDamage resets")]
-    public float PostureResetCooldown = 5f;
     [Tooltip("amount of time before Super armour resets")]
     public float superArmourResetCooldown;
-    float c = 0;
-    private void Awake()
+    
+    public bool BossDead = false;
+    
+    float CalculateDamage(float Damage)
     {
-        bossController = GetComponent<BossAttack>();
+        return Damage * (100/( 100 + Defence));
     }
-
     private void Start()
     {
         CurrentHealth = MaxHealth;
@@ -47,39 +43,8 @@ public class BossHealth : MonoBehaviour
     private void Update()
     {
         
-        if (PlayerInputHandler.Instance.CrounchInput)
-        {
-            PostureDamage(10);
-            
-            PlayerInputHandler.Instance.CrounchInput = false;
-        }
-
-        if (PlayerInputHandler.Instance.CrounchInput)
-        {
-            TakeDamage(15,5);
-            PlayerInputHandler.Instance.CrounchInput = false;
-        }
-
-        if (PlayerInputHandler.Instance.BossJumpInput)
-        {
-            BossAnimator.Play("Jump Attack");
-        }
         PostureReset();
         SuperArmourReset();
-        
-        c+= Time.deltaTime;
-        Debug.Log(c);
-        if (c >= 5)
-        {
-            c = 0;
-            BossAnimator.SetTrigger("Attack");
-        }
-        
-    }
-
-    float CalculateDamage(float Damage)
-    {
-        return Damage * (100/( 100 + Defence));
     }
     
     public void TakeDamage(float Damage,float PostureDamagePercent)
@@ -88,8 +53,10 @@ public class BossHealth : MonoBehaviour
             
         CurrentHealth -= CalculateDamage(Damage);
         CurrentSuperArmour -=Damage;
+        
         Debug.Log("Health" +  CurrentHealth);
         Debug.Log("Posture" + CurrentPosture);
+        
         PostureDamage(PostureDamagePercent);
         
         if (CurrentHealth <= 0)
@@ -160,21 +127,6 @@ public class BossHealth : MonoBehaviour
                 CurrentSuperArmour = MaxSuperArmour;
             }
         }
-    }
-
-    private void OnAnimatorMove()
-    {
-        AnimatorStateInfo Sate = BossAnimator.GetCurrentAnimatorStateInfo(0);
-
-        if (Sate.IsName("Jump Attack"))
-        {
-            Vector3 DeltaPosition = BossAnimator.deltaPosition;
-
-            DeltaPosition *= JuampAttackDistanceMultiplier;
-        }
-        
-        transform.position += BossAnimator.deltaPosition * Time.deltaTime;
-        
     }
 
     public  void Heal(float healAmount)
