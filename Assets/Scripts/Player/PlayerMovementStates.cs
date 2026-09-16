@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -119,6 +120,7 @@ public class PlayerMovementStates : MonoBehaviour
             //Destroy(Player);
         }
     }
+    
     private void Start()
     {
         if (Cursor.lockState != CursorLockMode.Locked)
@@ -130,6 +132,7 @@ public class PlayerMovementStates : MonoBehaviour
         CurrentSuperStates = States.Grounded;
         currentAbilityStates = AbilityStates.None;
     }
+    
     private void Update()
     {
         anim.SetBool("Sword",Sword);
@@ -173,6 +176,7 @@ public class PlayerMovementStates : MonoBehaviour
             }
         }
     }
+    
     
 #region Super States    
 
@@ -509,6 +513,7 @@ public class PlayerMovementStates : MonoBehaviour
     bool isattacking = false;
     private bool animcalled;
     private bool inCombat;
+    public float atackableradius = 5;
     public bool Sword = true;
     
     public void AttackCallInputs()
@@ -580,4 +585,8 @@ public class PlayerMovementStates : MonoBehaviour
 
 #endregion
 
+private void OnDrawGizmos()
+{
+    Gizmos.DrawWireSphere(transform.position,atackableradius);
+}
 }

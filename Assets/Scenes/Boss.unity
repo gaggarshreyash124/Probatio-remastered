@@ -8584,11 +8584,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossAttack
   Movespeed: 13
-  ChargeSpeed: 2
   Delay: 4
   Spawned: 1
-  MinActionDesionDistance: 30
-  MaxActionDesionDistance: 40
+  MinActionDesionDistance: 25
+  MaxActionDesionDistance: 55
+  minTravelDistance: 5
   directionCount: 16
   distancePriority: 0.5
   secondarywalkableCheck: 3
@@ -8597,8 +8597,16 @@ MonoBehaviour:
     m_Bits: 64
   wallcheckradius: 15
   walkableAngle: 35
-  prioritysub: 0.5
   offsetAmount: 3
+  FacePlayer: 1
+  rotationSpeed: 15
+  minfovangle: 10
+  PreviousBestPosition: {x: 0, y: 0, z: 0}
+  haspreviousvalue: 0
+  AttackStates: 0
+  Allattackscooldown: 0
+  GracePeriodCooldown: 0
+  GraceTime: 0
 --- !u!114 &1388870456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9051,11 +9059,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossAttack
   Movespeed: 0
-  ChargeSpeed: 0
   Delay: 0
   Spawned: 0
   MinActionDesionDistance: 0
   MaxActionDesionDistance: 0
+  minTravelDistance: 5
   directionCount: 16
   distancePriority: 0.5
   secondarywalkableCheck: 3
@@ -9064,8 +9072,16 @@ MonoBehaviour:
     m_Bits: 0
   wallcheckradius: 0
   walkableAngle: 35
-  prioritysub: 0.5
   offsetAmount: 3
+  FacePlayer: 1
+  rotationSpeed: 15
+  minfovangle: 15
+  PreviousBestPosition: {x: 0, y: 0, z: 0}
+  haspreviousvalue: 0
+  AttackStates: 0
+  Allattackscooldown: 0
+  GracePeriodCooldown: 0
+  GraceTime: 0
 --- !u!1 &1690691945
 GameObject:
   m_ObjectHideFlags: 0
@@ -9609,6 +9625,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 538889698}
+    - target: {fileID: 7023928756839264798, guid: 33675a3817731224fb706de21b7d9e90, type: 3}
+      propertyPath: atackableradius
+      value: 3.31
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -76,7 +76,6 @@ public class BossHealth : MonoBehaviour
             Debug.Log("Damn Boss is down time to repost");
         }
         Debug.Log("Posture " +CurrentPosture);
-        //Debug.Log(MaxPosture * PostureDamagePercent/100);
     }
 
     public void PostureReset()
