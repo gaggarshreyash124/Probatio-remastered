@@ -10,12 +10,15 @@ public class Bullet_script : MonoBehaviour
 
     void Start()
     {
-        movement = ((player.position - transform.position).normalized) * move_speed;
+        movement = ((player.position - transform.position).normalized * move_speed);
+        movement += Vector3.up * Time.deltaTime * move_speed * 2;
+        Debug.Log(movement);
         rb = GetComponent<Rigidbody>();
+        rb.linearVelocity =  Vector3.zero;
     }
     void Update()
     {
-        rb.AddForce(movement);
+        rb.linearVelocity = movement;
     }
 
     void OnCollisionEnter(Collision collision)

@@ -10,9 +10,11 @@ public class Trap_enemy : Enemy_checks
     private float speed = 0;
     private bool fall = false;
     [SerializeField] private LayerMask ground_mask;
+    private Animator animator;
     void Start()
     {
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -22,6 +24,7 @@ public class Trap_enemy : Enemy_checks
             if (Physics.Raycast(transform.position, Vector3.down, DistToGround, data.player_mask))
             {
                 fall = true;
+                animator.SetBool("Found", true);
             }
         }
         if (fall)
@@ -42,11 +45,14 @@ public class Trap_enemy : Enemy_checks
         {
             speed = 0;
             gameObject.GetComponent<NavMeshAgent>().enabled = true;
+            animator.SetBool("Chase", true);
+            
         }
         else if (Physics.Raycast(transform.position, Vector3.down, 0.5f, data.player_mask))
         {
             speed = 0;
-            transform.position = player.transform.position + Vector3.up;
+            transform.position = player.transform.position + (Vector3.up *1.8f);
+            animator.SetBool("Grab", true);
         }
         else
         {

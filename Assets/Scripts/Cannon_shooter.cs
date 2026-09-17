@@ -16,7 +16,6 @@ public class Cannon_shooter : Enemy_checks
                 GameObject proj = Instantiate(bullet, transform.position, transform.rotation);
                 proj.GetComponent<Bullet_script>().player = player;
                 timer = 0;
-                Debug.Log("Spawn");
             }
         }
     }
