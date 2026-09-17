@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd690eea1d22e55408d3ac257bbe029f
+guid: 7fc79690d80d1514c846224ec7691443
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: bark
-    second: {fileID: 2100000, guid: 965e0b3415c13984ea0f905b3b206571, type: 2}
+    second: {fileID: 2100000, guid: b16ea2372ce687c40b0d2a711e50afa1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: leaves
-    second: {fileID: 2100000, guid: 1adebf7276b05ab41bb3d6ee2559a2d1, type: 2}
+      name: deadbranch
+    second: {fileID: 2100000, guid: 30995ea74302a2041ae28ec8bc5cf678, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -43,7 +43,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -101,7 +101,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.02
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

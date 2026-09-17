@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 3bff0bd55be2ed345abc5512fd819f9c
+guid: 582f54a5e29c1b14eafac0f01ec3381f
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bark
-    second: {fileID: 2100000, guid: b16ea2372ce687c40b0d2a711e50afa1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: deadbranch
-    second: {fileID: 2100000, guid: 30995ea74302a2041ae28ec8bc5cf678, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
