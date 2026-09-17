@@ -3,7 +3,37 @@ guid: 582f54a5e29c1b14eafac0f01ec3381f
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BarkB
+    second: {fileID: 2100000, guid: e8fccc4f63c6b9d47aaddc86eae96bc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ClusterB
+    second: {fileID: 2100000, guid: d4103227db0fa1848983b2c68dd95c13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ClusterB2
+    second: {fileID: 2100000, guid: bfca65f276440c64880f50cd4df484eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CortexB
+    second: {fileID: 2100000, guid: 92a2eff051bbb4747a3e8f77bc16f0df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PruneB
+    second: {fileID: 2100000, guid: 8d758795340ab8a49b9dc43df6fb1f97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VinesB
+    second: {fileID: 2100000, guid: ce136987c51ba1947b294fbb583fef21, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
